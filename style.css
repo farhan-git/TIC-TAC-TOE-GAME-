@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+    background-color: rgb(57, 5, 14);
+}
+.select-box, .play-board, .Result-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(67, 118, 164);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.select-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 25px 25px;
+    background: rgb(249, 249, 249);
+    border-radius: 5px;
+    max-width: 330px;
+    width: 100%;
+    
+  
+}
+.select-box.hide{
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+.select-box header {
+    font-size: 23px;
+    font-weight: 500;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(172, 49, 49);
+    color: rgb(21, 20, 20);
+}
+.select-box .title {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 20px 0;
+}
+.select-box .options{
+    display: flex;
+    width: 100%;
+}
+.options button{
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 0;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background: rgb(70, 2, 2);
+    color: rgb(236, 236, 236);
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.options button:hover,
+.Result-box .btn button:hover{
+    transform: scale(0.96);
+}
+.options button.playerX{
+    margin-right: 5px;
+}
+.options button.playerO{
+    margin-left: 5px;
+}
+.play-board .details .players{
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+}
+.play-board .details span{
+    width: 100%;
+    border-radius: 5px;
+    color: black;
+    padding: 9px 0;
+    font-size: 19px;
+    font-weight: 500;
+    cursor: default;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+    transition: all 0.3s ease;
+}
+.details span:first-child{
+    color: #fff;
+
+}
+.details .slider{
+    background: rgb(0, 0, 0);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    border-radius: 5px;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+.play-board {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+.play-board.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+.play-board .details{
+    background-color: #fff;
+    padding: 7px;
+    border-radius: 5px;
+}
+.play-board .play-area{
+    margin-top: 20px;
+}
+.play-board section{
+    display: flex;
+}
+.play-board section span{
+    display: block;
+    margin: 2px;
+    height: 80px;
+    width: 80px;
+    background: #fff;
+    border-radius: 5px;
+    font-size: 40px;
+    text-align: center;
+    color: black;
+}
+.Result-box {
+    background: rgb(249, 249, 249);
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 350px;
+    width: 100%;
+        opacity: 0;
+        pointer-events: none;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+    .Result-box.show{
+        opacity: 1;
+        pointer-events: auto;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+.Result-box .won-text {
+    font-size: 25px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+.Result-box .won-text p {
+    font-weight: 0;
+    margin: 0 5px;
+}
+.Result-box .btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.Result-box .btn button{
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background: rgb(70, 2, 2);
+    color: rgb(236, 236, 236);
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.players.active span:first-child{
+    color: rgb(70, 2, 2);
+}
+.players.active span:nth-child(2){
+    color: rgb(236, 236, 236);
+}
+.players.active .slider{
+    left: 50%;
+}
